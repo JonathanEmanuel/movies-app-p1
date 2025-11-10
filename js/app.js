@@ -12,23 +12,22 @@ const mostrarPeliculas = (peliculas) => {
 
     container.innerHTML = "";
 
-    peliculas.forEach( item => {
-       
+    peliculas.forEach( pelicula => {
         const li = document.createElement('li');
         li.classList.add('card');
 
         const a = document.createElement('a');
-        a.setAttribute('href', 'detalle.html');
+        a.setAttribute('href', 'detalle.html?id='+pelicula.id);
 
         const img = document.createElement('img');
-        img.setAttribute('src', item.portada)
-        img.setAttribute('alt', item.titulo);
+        img.setAttribute('src', pelicula.portada)
+        img.setAttribute('alt', pelicula.titulo);
 
         const h2 = document.createElement('h2');
-        h2.textContent = item.titulo;
+        h2.textContent = pelicula.titulo;
         
         const p = document.createElement('p');
-        p.textContent = item.estreno;
+        p.textContent = pelicula.estreno;
 
 
         a.appendChild( img );
@@ -52,7 +51,6 @@ const mostrarFiltros = ( generos ) => {
     ulFillters.appendChild( li );
 
     generos.forEach( genero => {
-        console.log( genero);
         const li = document.createElement('li');
         li.textContent = genero;
         li.classList.add('pill');
@@ -66,9 +64,7 @@ const mostrarFiltros = ( generos ) => {
 
 /* ---- FUNCIÓN 3: Recibe el genero y filtra el Array, llama a la Función 1 --- */
 const filtrarPeliculas = ( genero) => {
-    console.log(genero);
     const filtradas = peliculas.filter( pelicula => pelicula.genero.includes( genero)  )
-   console.log( filtradas);
     mostrarPeliculas(filtradas);
 }
 mostrarFiltros( generos );

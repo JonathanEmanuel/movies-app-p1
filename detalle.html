@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movies ― Detalle</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/detalle.js" defer></script>
 </head>
 <body>
   <header class="container">
@@ -19,22 +21,24 @@
   <main class="container">
     <section class="detalles-pelicula">
       <div class="movie-poster">
-        <img src="assets/movies/mision-rescate.jpg" alt="Mision Rescate">
+        <img id="pImg" src="" alt="">
       </div>
       <div class="movie-info">
         <div class="movie-info_title">
-          <h3 class="h3">Mision Rescate</h3>
-          <ul class="movie-info_genres">
+          <h3 id="hTitulo" class="h3"></h3>
+          <ul id="ulGeneros" class="movie-info_genres">
+            <!--         
             <li class="pill pill-text">Acción</li>
-            <li class="pill pill-text">Fantasía</li>
+            <li class="pill pill-text">Fantasía</li> 
+            -->
           </ul>
         </div>
-        <p class="movie-info_sinopsis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus iste numquam quidem impedit et assumenda quaerat totam eos est reiciendis recusandae laborum iure iusto, eum dolores amet praesentium quibusdam harum..</p>
-        <a href="https://www.youtube.com/watch?v=keW_fKq187k" target="_blank" class="movie-info_trailer">🎥 Ver tráiler</a>
+        <p id="pDescripcion" class="movie-info_sinopsis"></p>
+        <a id="aTrailer" href="" target="_blank" class="movie-info_trailer">🎥 Ver tráiler</a>
         <dl class="movie-info_facts">
-          <div><dt>Año</dt><dd>2023</dd></div>
-          <div><dt>Duración</dt><dd>95 min</dd></div>
-          <div><dt>Director</dt><dd>Lee Cronin</dd></div>
+          <div><dt>Año</dt><dd id="dEstreno"></dd></div>
+          <div><dt>Duración</dt><dd id="dDuracion"> min</dd></div>
+          <div><dt>Director</dt><dd id="dDirector"></dd></div>
         </dl>
       </div>
     </section>
